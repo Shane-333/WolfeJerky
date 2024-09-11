@@ -1,0 +1,3381 @@
+/*
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
+/* -----------------------------------------------------------------------------
+
+# Base - General & Typography
+
+----------------------------------------------------------------------------- */
+html {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  line-height: 1.8;
+  color: #ffffff; /* Set text color to white */
+  background-color: #000000; /* Set background to black */
+  overflow-x: hidden;
+}
+
+body img {
+  max-width: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #FF0000; /* Set links to red */
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #ffffff; /* Set link hover color to white */
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 0 0 1.25rem 0;
+  color: #ffffff; /* Set headings to white */
+}
+
+h1:last-child, .h1:last-child,
+h2:last-child, .h2:last-child,
+h3:last-child, .h3:last-child,
+h4:last-child, .h4:last-child,
+h5:last-child, .h5:last-child,
+h6:last-child, .h6:last-child {
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+@media only screen and (max-width: 767.96px) {
+  h1, .h1 {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+}
+
+@media only screen and (max-width: 575.96px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+}
+
+@media only screen and (max-width: 767.96px) {
+  h2, .h2 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+}
+
+@media only screen and (max-width: 575.96px) {
+  h2, .h2 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+}
+
+@media only screen and (max-width: 575.96px) {
+  h3, .h3 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+@media only screen and (max-width: 575.96px) {
+  h4, .h4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  line-height: 1.8;
+  color: #ffffff; /* Set paragraph text to white */
+  margin: 0 0 1.25rem 0;
+}
+
+p:last-child {
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+
+# All Common Styles
+
+----------------------------------------------------------------------------- */
+.loader {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1111;
+  background: #000000; /* Set loader background to black */
+  overflow-x: hidden;
+}
+
+.loader-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+}
+
+.circle {
+  width: 8vmax;
+  height: 8vmax;
+  border-right: 4px solid #FF0000; /* Set loader circle border to red */
+  border-radius: 50%;
+  -webkit-animation: spinRight 800ms linear infinite;
+  animation: spinRight 800ms linear infinite;
+}
+
+.circle:before {
+  content: '';
+  width: 6vmax;
+  height: 6vmax;
+  display: block;
+  position: absolute;
+  top: calc(50% - 3vmax);
+  left: calc(50% - 3vmax);
+  border-left: 3px solid #FF0000; /* Set inner loader circle border to red */
+  border-radius: 100%;
+  -webkit-animation: spinLeft 800ms linear infinite;
+  animation: spinLeft 800ms linear infinite;
+}
+
+.circle:after {
+  content: '';
+  width: 6vmax;
+  height: 6vmax;
+  display: block;
+  position: absolute;
+  top: calc(50% - 3vmax);
+  left: calc(50% - 3vmax);
+  border-left: 3px solid #FF0000; /* Set inner loader circle border to red */
+  border-radius: 100%;
+  -webkit-animation: spinLeft 800ms linear infinite;
+  animation: spinLeft 800ms linear infinite;
+  width: 4vmax;
+  height: 4vmax;
+  top: calc(50% - 2vmax);
+  left: calc(50% - 2vmax);
+  border: 0;
+  border-right: 2px solid #ffffff; /* Set inner loader circle border to white */
+  -webkit-animation: none;
+  animation: none;
+}
+
+@-webkit-keyframes spinLeft {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes spinLeft {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}
+
+@-webkit-keyframes spinRight {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinRight {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mt-80 {
+    margin-top: 50px;
+  }
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mb-80 {
+    margin-bottom: 50px;
+  }
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mt-100 {
+    margin-top: 80px;
+  }
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mb-100 {
+    margin-bottom: 80px;
+  }
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mt-150 {
+    margin-top: 100px;
+  }
+}
+
+.mb-150 {
+  margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mb-150 {
+    margin-bottom: 100px;
+  }
+}
+
+.pt-80 {
+  padding-top: 80px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pt-80 {
+    padding-top: 50px;
+  }
+}
+
+.pb-80 {
+  padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pb-80 {
+    padding-bottom: 50px;
+  }
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pt-100 {
+    padding-top: 80px;
+  }
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pb-100 {
+    padding-bottom: 80px;
+  }
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pt-150 {
+    padding-top: 100px;
+  }
+}
+
+.pb-150 {
+  padding-bottom: 150px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .pb-150 {
+    padding-bottom: 100px;
+  }
+}
+
+.gray-bg {
+  background-color: #333333; /* Set background to dark grey */
+}
+
+.orange-text {
+  color: #FF0000; /* Set to red */
+}
+
+.blue-bg {
+  background-color: #000000; /* Set to black */
+}
+
+a.boxed-btn {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  background-color: #FF0000; /* Set buttons to red */
+  color: #ffffff; /* Set text on buttons to white */
+  padding: 10px 20px;
+  border: 2px solid #333333; /* Add dark grey border */
+  border-radius: 50px;
+}
+
+a.bordered-btn {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  color: #ffffff; /* Set text color to white */
+  border: 2px solid #FF0000; /* Set border to red */
+  padding: 7px 20px;
+  border-radius: 50px;
+}
+
+a.read-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ffffff; /* Set read more buttons to white */
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 700;
+}
+
+a.read-more-btn:hover {
+  color: #FF0000; /* Set hover color to red */
+}
+
+.section-title h3 {
+  font-size: 40px;
+  position: relative;
+  padding-bottom: 15px;
+  color: #ffffff; /* Set section title color to white */
+}
+
+.section-title h3:after {
+  position: absolute;
+  content: '';
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 50px;
+  height: 2px;
+  background-color: #FF0000; /* Set section title underline to red */
+  margin: 0 auto;
+}
+
+.section-title p {
+  font-size: 15px;
+  width: 530px;
+  margin: 0 auto;
+  color: #ffffff; /* Set section description text to white */
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+.section-title {
+  margin-bottom: 80px;
+}
+
+.breadcrumb-bg {
+  background-image: url(../img/breadcrumb-bg.jpg);
+}
+
+.breadcrumb-text p {
+  color: #FF0000; /* Set breadcrumb subtext to red */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.breadcrumb-text h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #ffffff; /* Set breadcrumb heading text to white */
+  margin: 0;
+  margin-top: 20px;
+}
+
+.breadcrumb-section {
+  padding: 200px 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  padding-top: 200px;
+}
+
+.breadcrumb-section:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 125%; /* Increase this value to make the background image extend further down */
+  content: "";
+  background: url(../img/beefjerkey-bg.jpg) no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  opacity: 1; /* Fully opaque */
+}
+
+/* -----------------------------------------------------------------------------
+
+# Header Styles
+
+----------------------------------------------------------------------------- */
+ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #ffffff; /* Set nav links to white */
+}
+
+.top-header-area {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  padding: 3px 0; /* Further reduced padding to minimize navbar height */
+  background-color: #000000; /* Keeps the navbar background color black */
+}
+
+
+
+.top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #ffffff; /* Set nav links to white */
+}
+
+ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #ffffff; /* Set nav links to white */
+  font-weight: 700;
+  margin-right: 14px;
+}
+
+a.navbar-brand img {
+  max-width: 150px;
+}
+
+nav.main-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav.main-menu ul li {
+  display: inline-block;
+}
+
+nav.main-menu ul li a {
+  color: #ffffff; /* Set nav links to white */
+  font-weight: 700;
+  display: block;
+  padding: 15px;
+}
+
+nav.main-menu ul > li {
+  position: relative;
+}
+
+nav.main-menu ul ul.sub-menu {
+  position: absolute;
+  background-color: #333333; /* Set sub-menu background to dark grey */
+  width: 220px;
+  padding: 15px 15px;
+  margin: 0;
+  left: 0;
+  top: 50px;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-box-shadow: 0 0 20px #555555;
+  box-shadow: 0 0 20px #555555;
+}
+
+nav.main-menu ul ul.sub-menu li {
+  display: block;
+  text-align: left;
+}
+
+nav.main-menu ul ul.sub-menu li a {
+  color: #ffffff; /* Set sub-menu links to white */
+  font-weight: 600;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+nav.main-menu ul > li:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav.main-menu ul li:last-child a {
+  display: inline-block;
+}
+
+nav.main-menu > ul li:last-child {
+  float: right;
+}
+
+.site-logo {
+  float: left;
+  max-width: 100px;
+}
+
+ul.sub-menu li:last-child {
+  float: none !important;
+}
+
+.mean-container .mean-bar {
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.mean-bar a.meanmenu-reveal {
+  background-color: #FF0000; /* Set mobile menu background to red */
+}
+
+.main-menu-wrap {
+  position: relative;
+}
+
+.mean-container a.meanmenu-reveal {
+  color: #ffffff; /* Set mobile menu icon color to white */
+}
+
+.mean-container a.meanmenu-reveal span {
+  background-color: #ffffff; /* Set mobile menu icon bars to white */
+}
+
+.mean-container .mean-nav ul li a {
+  padding: 0.5em 5%;
+}
+
+.mean-container .mean-nav ul li li a {
+  padding: 0.5em 10%;
+}
+
+.mean-container .mean-nav ul li a.mean-expand {
+  font-size: 16px;
+  height: 10px;
+  line-height: 10px;
+  width: 15px;
+}
+
+.mean-container a.meanmenu-reveal {
+  padding: 8px 8px 6px;
+}
+
+nav.mean-nav > ul > li:first-child > a {
+  border-top: none;
+}
+
+.header-icons a {
+  color: #ffffff; /* Set header icons to white */
+  display: inline-block;
+  padding: 10px;
+}
+
+.site-logo {
+  padding: 6px 0;
+}
+
+.top-header-area.separate-header ul li > a, .top-header-area.separate-header .header-icons a {
+  color: #ffffff; /* Set separate header icons to white */
+}
+
+nav.main-menu ul ul.sub-menu li {
+  display: block;
+}
+
+nav.main-menu ul ul.sub-menu li a {
+  color: #ffffff; /* Set sub-menu links to white */
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+nav.main-menu ul li.current-list-item > a {
+  color: #FF0000; /* Set active nav link to red */
+}
+
+nav.main-menu li:hover > a {
+  color: #FF0000; /* Set nav link hover color to red */
+}
+
+nav.main-menu li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.top-header-area .header-icons a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.top-header-area .header-icons a:hover {
+  color: #FF0000; /* Set header icon hover color to red */
+}
+
+.sticky-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999 !important;
+}
+
+.sticky-wrapper.is-sticky .top-header-area {
+  background-color: #333333; /* Set sticky header background to dark grey */
+  padding: 15px 0;
+}
+
+.top-header-area {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.navbar-nav {
+  margin: 0 auto;
+}
+
+.search-area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5555;
+  background-color: #000000; /* Set search area background to black */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+span.close-btn {
+  position: absolute;
+  right: 0%;
+  color: #ffffff; /* Set close button color to white */
+  top: 5%;
+  cursor: pointer;
+}
+
+.search-area {
+  height: 100%;
+}
+
+.search-area div {
+  height: 100%;
+}
+
+.search-bar {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+a.mobile-show {
+  display: none;
+}
+
+.search-area .search-bar div.search-bar-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  height: auto;
+}
+
+.search-bar-tablecell input {
+  border: none;
+  padding: 15px;
+  width: 60%;
+  background-color: transparent;
+  border-bottom: 1px solid #FF0000; /* Set input underline to red */
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff; /* Set input text to white */
+}
+
+.search-bar-tablecell button[type=submit] {
+  border: none;
+  background-color: #FF0000; /* Set search button background to red */
+  padding: 15px 30px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.search-bar-tablecell input::-webkit-input-placeholder {
+  color: #ffffff; /* Set input placeholder text to white */
+}
+
+.search-bar-tablecell input:-ms-input-placeholder {
+  color: #ffffff; /* Set input placeholder text to white */
+}
+
+.search-bar-tablecell input::-ms-input-placeholder {
+  color: #ffffff; /* Set input placeholder text to white */
+}
+
+.search-bar-tablecell input::placeholder {
+  color: #ffffff; /* Set input placeholder text to white */
+}
+
+.search-bar-tablecell button[type=submit] i {
+  margin-left: 5px;
+}
+
+.search-area {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.search-area.search-active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+}
+
+.search-bar-tablecell h3 {
+  color: #ffffff; /* Set search area text to white */
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Footer Styles
+
+----------------------------------------------------------------------------- */
+/* General Footer Styles */
+.footer-area {
+  background-color: #000000; /* Set footer background to black */
+  color: #ffffff; /* Set footer text to white */
+  padding: 100px 0; /* Adjust padding */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: flex-start; /* Align the boxes at the top */
+}
+
+/* Footer Box Styling */
+.footer-box {
+  flex: 1 1 300px; /* Ensure full width on small screens */
+  max-width: 300px; /* Limit the max width of each box */
+  margin-bottom: 30px; /* Add margin for spacing */
+}
+
+
+
+/* Widget Titles */
+h2.widget-title {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 20px;
+  color: #ffffff; /* Footer widget titles to white */
+}
+
+
+h2.widget-title:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px; /* Increased width for more prominence */
+  height: 2px;
+  background-color: #FF0000; /* Red underline for widget titles */
+  content: "";
+}
+
+
+
+.footer-box p {
+  color: #ffffff; /* Footer text in white */
+  opacity: 0.8; /* Increased opacity for better readability */
+  line-height: 1.8;
+}
+
+.footer-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-box ul li {
+  opacity: 0.8;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.footer-box ul li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-box ul li a {
+  color: #ffffff; /* Footer links in white */
+  text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+  color: #FF0000; /* Red on hover for footer links */
+}
+
+/* Footer Subscribe Form */
+.footer-box.subscribe {
+  flex: 1 1 300px; /* Adjust the width */
+  order: 2; /* Ensure it is ordered last (on the right) */
+  align-self: flex-start; /* Align to the top right */
+  margin-top: 0; /* Remove extra margin */
+}
+
+/* Footer Subscribe Form */
+.footer-box.subscribe form {
+  display: flex;
+}
+
+.footer-box.subscribe form input[type=email] {
+  border: none;
+  background-color: #333333; /* Dark grey input background */
+  width: 75%; /* Adjusted width for better balance */
+  padding: 15px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #ffffff; /* Input text in white */
+}
+
+.footer-box.subscribe form button {
+  width: 25%; /* Adjusted to match input width */
+  border: none;
+  background-color: #FF0000; /* Red button background */
+  color: #ffffff; /* Button text in white */
+  padding: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-box.subscribe form button:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+/* Social Icons */
+.social-icons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-icons ul li {
+  display: inline-block;
+}
+
+.social-icons ul li a {
+  font-size: 16px;
+  color: #ffffff; /* Footer social icon links in white */
+  opacity: 0.7;
+  padding: 16px 10px;
+  display: block;
+}
+
+.social-icons ul li a:hover {
+  color: #FF0000; /* Social icon turns red on hover */
+  opacity: 1;
+}
+
+/* Footer Pages List Styling */
+.footer-box.pages ul li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer-box.pages ul li:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #FF0000; /* Red list icon */
+}
+
+/* Copyright Section */
+.copyright {
+  background-color: #000000; /* Copyright background black */
+  border-top: 1px solid #232a35; /* Subtle border */
+  text-align: center;
+  padding: 15px 0; /* Adjusted padding for a more compact look */
+}
+
+.copyright p {
+  margin: 0;
+  color: #ffffff; /* White text */
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+
+@media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin: -15px;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+
+# Hover Styles
+
+----------------------------------------------------------------------------- */
+a.navbar-brand {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.navbar-brand:hover {
+  opacity: 0.7;
+}
+
+a.boxed-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.boxed-btn:hover {
+  background-color: #333333; /* Set button hover background to dark grey */
+  color: #FF0000; /* Set button hover text to red */
+}
+
+a.bordered-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.bordered-btn:hover {
+  background-color: #FF0000; /* Set bordered button hover background to red */
+  color: #ffffff; /* Set bordered button hover text to white */
+}
+
+ul.sub-menu a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.sub-menu li:hover a {
+  color: #FF0000; /* Set sub-menu hover text to red */
+}
+
+.single-tof-box {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-tof-box:hover {
+  -webkit-box-shadow: 0 0 80px #353535;
+  box-shadow: 0 0 80px #353535;
+}
+
+a.video-play-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.video-play-btn:hover {
+  background-color: #333333; /* Set video play button hover background to dark grey */
+  color: #FF0000; /* Set video play button hover text to red */
+}
+
+.latest-news-bg {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-latest-news:hover .latest-news-bg {
+  opacity: 0.8;
+}
+
+a.tof-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.tof-btn i {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.tof-btn:hover {
+  color: #FF0000; /* Set button hover text to red */
+}
+
+a.tof-btn:hover i {
+  margin-left: 10px;
+}
+
+.single-latest-news {
+  -webkit-box-shadow: 0 0 20px #dddddd;
+  box-shadow: 0 0 20px #dddddd;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-latest-news:hover {
+  -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.single-logo-item {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-logo-item:hover {
+  opacity: 0.7;
+}
+
+.footer-box.pages ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer-box.pages ul li:hover a {
+  color: #FF0000; /* Set footer list item hover text to red */
+}
+
+.footer-box.subscribe form button {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer-box.subscribe form button:hover {
+  background-color: #FF0000; /* Set input button hover background to red */
+  color: #000000; /* Set input button hover text to black */
+}
+
+.social-icons ul li:hover a {
+  color: #FF0000; /* Set footer social icon hover color to red */
+}
+
+.social-icons ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.social-link-team li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.social-link-team li a:hover {
+  background-color: #000000; /* Set team social link hover background to black */
+  color: #FF0000; /* Set team social link hover text to red */
+}
+
+.counter-box {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.counter-box:hover {
+  -webkit-box-shadow: 0 0 80px #6f6f6f;
+  box-shadow: 0 0 80px #6f6f6f;
+}
+
+input[type="submit"] {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50px !important;
+}
+
+input[type="submit"]:hover {
+  background-color: #000000; /* Set submit button hover background to black */
+  color: #FF0000; /* Set submit button hover text to red */
+}
+
+div.owl-controls, .owl-controls div {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+div.owl-controls div.owl-nav div:hover {
+  opacity: 0.7;
+}
+
+.pagination-wrap ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.pagination-wrap ul li:hover a {
+  background-color: #FF0000; /* Set pagination hover background to red */
+}
+
+.icons a i {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.icons a:hover i {
+  color: #FF0000; /* Set icon hover color to red */
+}
+
+.tof-text a.tof-btn {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.single-pricing-table {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-pricing-table:hover {
+  -webkit-box-shadow: 0 0 20px #ddd;
+  box-shadow: 0 0 20px #ddd;
+}
+
+.product-image img {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.product-lists {
+  display: flex;
+  flex-wrap: wrap; /* Ensure products wrap to the next row */
+  justify-content: space-between; /* Space between items */
+}
+
+/* Ensure each product takes up 1/3 of the row for large screens (lg) */
+.product-lists .col-lg-4 {
+  flex: 0 0 30%; /* Adjust this to 30% to allow spacing */
+  max-width: 30%; /* Set max-width to match the flex-basis */
+  box-sizing: border-box; /* Make sure padding is included in the width */
+  margin-bottom: 30px; /* Space below each product */
+}
+
+/* On medium screens (2 per row) */
+.product-lists .col-md-6 {
+  flex: 0 0 45%; /* Adjust this to 45% to allow for spacing between two columns */
+  max-width: 45%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* On small screens (1 per row) */
+@media (max-width: 768px) {
+  .product-lists .col-lg-4, .product-lists .col-md-6 {
+      flex: 0 0 100%; /* Full width for small screens */
+      max-width: 100%;
+  }
+}
+
+
+
+.product-image img:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a.cart-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.cart-btn:hover {
+  background-color: #000000; /* Set cart button hover background to black */
+  color: #FF0000; /* Set cart button hover text to red */
+}
+
+.recent-posts ul li {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recent-posts ul li:hover {
+  opacity: 0.7;
+}
+
+ul.sub-menu li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.sub-menu li:hover a {
+  color: #FF0000 !important; /* Set sub-menu hover text to red */
+}
+
+.sidebar-section ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidebar-section ul li a:hover {
+  opacity: 0.7;
+}
+
+.comment-text-body h4 a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.comment-text-body h4 a:hover {
+  color: #FF0000; /* Set comment author hover text to red */
+}
+
+ul.product-share li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.product-share li:hover a {
+  color: #FF0000; /* Set product share icon hover color to red */
+}
+
+.service-menu ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.service-menu ul li a.active {
+  font-weight: 600;
+  color: #FF0000; /* Set active service menu item to red */
+}
+
+.service-menu ul li a:hover {
+  color: #FF0000; /* Set service menu item hover color to red */
+}
+
+.single-product-item {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  margin-bottom: 30px; /* Space between products vertically */
+  text-align: center; /* Centers the product title and price */
+}
+
+.single-product-item:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Center-align the images and add padding */
+.single-product-item .product-image img {
+  width: 100%; /* Make sure images fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.search-bar-tablecell button[type=submit] {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.search-bar-tablecell button[type=submit]:hover {
+  background-color: #ffffff; /* Set search button hover background to white */
+  color: #000000; /* Set search button hover text to black */
+}
+
+span.close-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+span.close-btn:hover {
+  color: #FF0000; /* Set close button hover color to red */
+}
+
+a.mobile-show.search-bar-icon {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.mobile-show.search-bar-icon:hover {
+  color: #FF0000; /* Set mobile search bar icon hover color to red */
+}
+
+/* -----------------------------------------------------------------------------
+
+# Hero Styles
+
+----------------------------------------------------------------------------- */
+.hero-bg {
+  background-image: url('../img/beefjerkey-bg.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* Ensure the div has height to show the background */
+  width: 100%; /* Ensure the div has full width to show the background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Ensure positioning context */
+  z-index: 1; /* Ensure content is above background */
+}
+
+.hero-text {
+  display: table;
+  height: 100%;
+  position: relative;
+  z-index: 10; /* Higher than the overlay or background */
+}
+
+.hero-text-tablecell {
+  height: auto;
+  vertical-align: middle;
+  display: table-cell;
+  padding-top: 180px; /* Increased padding to move the text down */
+}
+
+.hero-area {
+  padding-top: 190px; /* Increased padding to the top of the hero area */
+  position: relative;
+  z-index: 1;
+}
+
+html, body {
+  height: 100%;
+}
+
+.hero-area:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Increased opacity for better text visibility */
+  z-index: 1;
+}
+
+.hero-text p.subtitle {
+  color: #FF0000; /* Set hero subtitle to red */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 15px;
+  position: relative;
+  z-index: 2; /* Ensure it's above the overlay */
+  padding: 10px;
+}
+
+
+.hero-text p.subtitle, .hero-text h1 {
+  color: #FF0000; /* Bright red for testing */
+  position: relative;
+  z-index: 10; /* Higher than any overlay or background */
+  visibility: visible;
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff; /* Set hero title to white */
+  position: relative;
+  z-index: 2; /* Ensure it's above the overlay */
+  padding: 10px;
+}
+
+.hero-area div {
+  height: 100%;
+}
+
+.hero-area div.hero-text {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-area div.hero-text-tablecell {
+  height: auto;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.hero-btns {
+  margin-top: 35px;
+}
+
+.hero-btns a.bordered-btn {
+  margin-left: 15px;
+}
+
+.hero-area div.hero-form {
+  background-color: #333333; /* Set form background to dark grey */
+  text-align: center;
+  width: 380px;
+  margin: 0 auto;
+  margin-right: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px #2d2d2d;
+  box-shadow: 0 0 15px #2d2d2d;
+  position: absolute;
+  right: 30px;
+  bottom: -15%;
+  height: 600px;
+}
+
+input[type="submit"] {
+  background-color: #FF0000; /* Set submit button background to red */
+  color: #ffffff; /* Set submit button text to white */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: none !important;
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 3px;
+}
+
+.homepage-bg-1 {
+  background-image: url(../img/hero-bg.jpg);
+}
+
+.homepage-bg-2 {
+  background-image: url(../img/hero-bg-2.jpg);
+}
+
+.homepage-bg-3 {
+  background-image: url(../img/hero-bg-3.jpg);
+}
+
+.homepage-slider {
+  height: 100%;
+}
+
+.homepage-slider div {
+  height: 100%;
+}
+
+.homepage-slider div.hero-text {
+  display: table;
+  width: 100%;
+}
+
+.homepage-slider div.hero-text-tablecell {
+  height: auto;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.homepage-slider div.hero-text-tablecell div {
+  height: auto;
+}
+
+.single-homepage-slider {
+  background-size: cover;
+  background-position: center;
+  background-color: #020C0E;
+  position: relative;
+  z-index: 1;
+}
+
+.single-homepage-slider:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #051922;
+  content: "";
+  z-index: -1;
+  opacity: 0.7;
+}
+
+div.owl-controls, .owl-controls div {
+  height: auto;
+  top: 50%;
+  color: #FF0000; /* Set slider controls to red */
+  font-size: 48px;
+}
+
+.homepage-slider {
+  position: relative;
+}
+
+.owl-prev {
+  position: absolute;
+  left: 60px;
+  margin-top: -30px;
+}
+
+.owl-next {
+  position: absolute;
+  right: 60px;
+  margin-top: -30px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# List Styles
+
+----------------------------------------------------------------------------- */
+.list-section {
+  background-color: #333333; /* Set list section background to dark grey */
+}
+
+.list-box {
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.list-box .content h3 {
+  display: block;
+  line-height: 22px;
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #ffffff; /* Set list box title to white */
+}
+
+.list-box .content p {
+  margin-bottom: 0px;
+  opacity: 0.75;
+}
+
+.list-box .list-icon i {
+  display: block;
+  font-size: 24px;
+  margin-right: 15px;
+  color: #FF0000; /* Set list icon to red */
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 60px;
+  border: 2px #FF0000 dotted; /* Set list icon border to red */
+  border-radius: 999px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# News Styles
+
+----------------------------------------------------------------------------- */
+.news-bg-1 {
+  background-image: url(../img/latest-news/news-bg-1.jpg);
+}
+
+.news-bg-2 {
+  background-image: url(../img/latest-news/news-bg-2.jpg);
+}
+
+.news-bg-3 {
+  background-image: url(../img/latest-news/news-bg-3.jpg);
+}
+
+.news-bg-4 {
+  background-image: url(../img/latest-news/news-bg-4.jpg);
+}
+
+.news-bg-5 {
+  background-image: url(../img/latest-news/news-bg-5.jpg);
+}
+
+.news-bg-6 {
+  background-image: url(../img/latest-news/news-bg-6.jpg);
+}
+
+.latest-news-bg {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  background-color: #333333; /* Set latest news background to dark grey */
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.single-latest-news h3 {
+  font-size: 20px;
+  line-height: 1.25em;
+  font-weight: 600;
+  color: #ffffff; /* Set latest news title to white */
+}
+
+.single-latest-news h3 a {
+  color: #ffffff; /* Set latest news links to white */
+}
+
+p.blog-meta span {
+  margin-right: 15px;
+  opacity: 0.6;
+  color: #ffffff; /* Set blog meta text to white */
+  font-size: 0.85em;
+}
+
+p.blog-meta span:last-child {
+  margin-right: 0;
+}
+
+p.blog-meta span i {
+  margin-right: 5px;
+}
+
+p.excerpt {
+  line-height: 1.8;
+  color: #ffffff; /* Set blog excerpt text to white */
+}
+
+.latest-news a.boxed-btn {
+  margin-top: 80px;
+}
+
+.news-text-box {
+  padding: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.single-latest-news {
+  margin-bottom: 30px;
+}
+
+.single-artcile-bg {
+  background-image: url(../img/latest-news/news-bg-3.jpg);
+  height: 450px;
+}
+
+.pagination-wrap {
+  margin-top: 40px;
+}
+
+.pagination-wrap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-wrap ul li {
+  display: inline-block;
+}
+
+.pagination-wrap ul li a {
+  color: #ffffff; /* Set pagination text to white */
+  font-size: 15px;
+  background-color: #333333; /* Set pagination background to dark grey */
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin: 3px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.pagination-wrap ul li a.active {
+  background-color: #FF0000; /* Set active pagination background to red */
+}
+
+.single-artcile-bg {
+  background-size: cover;
+  background-position: center;
+  background-color: #333333; /* Set article background to dark grey */
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.single-article-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #ffffff; /* Set article title to white */
+}
+
+.single-article-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff; /* Set article text to white */
+}
+
+.comments-list-wrap {
+  margin: 100px 0;
+}
+
+.comments-list-wrap h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #ffffff; /* Set comments heading to white */
+}
+
+.comment-template h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #ffffff; /* Set comment template heading to white */
+}
+
+.single-comment-body {
+  position: relative;
+}
+
+.comment-user-avatar {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.comment-user-avatar img {
+  width: 60px;
+  max-width: 60px;
+  border-radius: 50%;
+}
+
+.comment-text-body {
+  padding-left: 80px;
+  margin-bottom: 40px;
+}
+
+.comment-text-body h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff; /* Set comment author name to white */
+}
+
+span.comment-date {
+  opacity: 0.5;
+  font-size: 80%;
+  font-weight: 700;
+  margin-left: 5px;
+  color: #ffffff; /* Set comment date text to white */
+}
+
+.comment-text-body h4 a {
+  color: #FF0000; /* Set comment author link color to red */
+  font-size: 80%;
+  margin-left: 10px;
+  border-bottom: 1px solid #FF0000; /* Set comment author link underline to red */
+}
+
+.single-comment-body.child {
+  margin-left: 75px;
+}
+
+.comment-text-body p {
+  color: #888;
+  line-height: 2;
+  margin: 0;
+}
+
+.comment-template h4 {
+  margin-bottom: 10px;
+}
+
+.comment-template > p {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.comment-template form p input[type=text] {
+  border: 1px solid #ddd;
+  width: 49%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff; /* Set comment form text to white */
+}
+
+.comment-template form p input[type=email] {
+  border: 1px solid #ddd;
+  width: 49%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff; /* Set comment form text to white */
+  margin-left: 10px;
+}
+
+.comment-template form p textarea {
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 15px;
+  color: #ffffff; /* Set comment form text to white */
+  border-radius: 5px;
+  height: 250px;
+  resize: none;
+  width: 100%;
+}
+
+.sidebar-section {
+  margin-left: 30px;
+}
+
+.sidebar-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff; /* Set sidebar heading to white */
+}
+
+.sidebar-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-section ul li {
+  line-height: 1.5;
+}
+
+.sidebar-section ul li a {
+  color: #ffffff; /* Set sidebar links to white */
+  font-size: 15px;
+}
+
+.sidebar-section > div {
+  margin-bottom: 60px;
+}
+
+.sidebar-section > div:last-child {
+  margin-bottom: 0;
+}
+
+.recent-posts ul li, .archive-posts ul li {
+  position: relative;
+  padding-left: 17px;
+  margin-bottom: 10px;
+}
+
+.recent-posts ul li:before, .archive-posts ul li:before {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-section ul li {
+  display: inline-block;
+}
+
+.tag-section ul li a {
+  background-color: #333333; /* Set tag section background to dark grey */
+  padding: 3px 10px;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Cart Banner Styles
+
+----------------------------------------------------------------------------- */
+.cart-banner {
+  background-color: #333333; /* Set cart banner background to dark grey */
+}
+
+.cart-banner .image-column {
+  position: relative;
+  margin-top: 40px;
+}
+
+.cart-banner .image-column .price-box {
+  position: absolute;
+  left: 15%;
+  top: -30px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid #ffffff; /* Set price box border to white */
+  background-color: rgba(255, 0, 0, 0.75); /* Set price box background to semi-transparent red */
+}
+
+.cart-banner .image-column .price-box .inner-price {
+  position: relative;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto;
+  margin-top: 8px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #FF0000; /* Set inner price box background to red */
+}
+
+.cart-banner .image-column .price-box .inner-price .price {
+  color: #ffffff; /* Set price text to white */
+  padding-top: 27px;
+  position: relative;
+  display: inline-block;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.cart-banner .image-column .price-box .inner-price .price strong {
+  color: #ffffff; /* Set strong price text to white */
+  font-size: 24px;
+}
+
+.cart-banner .content-column {
+  position: relative;
+  padding-top: 40px;
+}
+
+.cart-banner .content-column h3 {
+  font-size: 40px;
+  color: #ffffff; /* Set banner title to white */
+}
+
+.cart-banner .content-column h4 {
+  position: relative;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #ffffff; /* Set banner subtitle to white */
+}
+
+.cart-banner .content-column .text {
+  position: relative;
+  font-weight: 400;
+  line-height: 1.8em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #ffffff; /* Set banner text to white */
+}
+
+.time-counter {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.time-counter .time-countdown {
+  position: relative;
+}
+
+.time-countdown .counter-column {
+  position: relative;
+  display: inline-block;
+  margin: 0px 0px 5px;
+  font-size: 13px;
+  line-height: 1em;
+  padding: 8px 20px 14px;
+  text-transform: capitalize;
+  text-align: center;
+  border: 2px solid #FF0000; /* Set countdown border to red */
+}
+
+.time-countdown .counter-column .count {
+  position: relative;
+  display: block;
+  font-size: 30px;
+  line-height: 1.4em;
+  padding: 0px 0px;
+  color: #FF0000; /* Set countdown text to red */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Testimonial Styles
+
+----------------------------------------------------------------------------- */
+.client-avatar {
+  margin-bottom: 20px;
+}
+
+.client-meta h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff; /* Set testimonial name to white */
+}
+
+.client-meta h3 span {
+  display: block;
+  font-size: 70%;
+  margin-top: 10px;
+  color: #ffffff; /* Set testimonial role to white */
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+p.testimonial-body {
+  font-size: 17px;
+  font-style: italic;
+  width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #999999; /* Set testimonial text to grey */
+  margin-top: 20px;
+}
+
+.last-icon {
+  margin-top: 20px;
+  font-size: 25px;
+  opacity: 0.3;
+}
+
+.client-avatar img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------------------------------------
+
+# About Styles
+
+----------------------------------------------------------------------------- */
+a.video-play-btn {
+  position: absolute;
+  background-color: #FF0000; /* Set video play button background to red */
+  color: #ffffff; /* Set video play button text to white */
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  line-height: 92px;
+  border-radius: 50%;
+  font-size: 20px;
+  padding-left: 5px;
+  display: block;
+  z-index: 2;
+  top: 50%;
+  margin-top: -45px;
+  -webkit-box-shadow: 0 0 20px #adadad;
+  box-shadow: 0 0 20px #adadad;
+  left: 50%;
+  margin-left: -45px;
+}
+
+.abt-bg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.abt-bg:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #051922;
+  opacity: 0.3;
+}
+
+.abt-section .abt-text {
+  padding: 50px;
+  padding-left: 30px;
+}
+
+.abt-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #ffffff; /* Set about text to white */
+}
+
+.abt-text p.top-sub {
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.abt-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Shop Banner Styles
+
+----------------------------------------------------------------------------- */
+.shop-banner {
+  position: relative;
+  background-color: #333333; /* Set shop banner background to dark grey */
+  background-image: url(../img/stockjerky.jpg);
+  background-size: cover;
+  padding: 110px 0px 115px;
+}
+
+.shop-banner h3 {
+  position: relative;
+  font-size: 50px;
+  line-height: 1.2em;
+  margin-bottom: 0px;
+  color: #ffffff; /* Set shop banner title to white */
+}
+
+.shop-banner .sale-percent {
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+  color: #FF0000; /* Set shop banner sale percent to red */
+}
+
+.shop-banner .sale-percent span {
+  position: relative;
+  font-size: 24px;
+  line-height: 1.1em;
+  color: #ffffff; /* Set shop banner sale text to white */
+  font-weight: 400;
+  text-align: center;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* -----------------------------------------------------------------------------
+
+# About Page Styles
+
+----------------------------------------------------------------------------- */
+.feature-bg {
+  position: relative;
+  margin: 150px 0;
+}
+
+.feature-bg:after {
+  background-image: url(../img/stockphoto.jpg);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 42%;
+  height: 75%;
+  content: "";
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 5px;
+  -webkit-box-shadow: 0 0 20px #cacaca;
+  box-shadow: 0 0 20px #cacaca;
+  border-bottom-left-radius: 5px;
+}
+
+.team-bg-1 {
+  background-image: url(../img/team/team-1.jpg);
+}
+
+.team-bg-2 {
+  background-image: url(../img/team/team-2.jpg);
+}
+
+.team-bg-3 {
+  background-image: url(../img/team/team-3.jpg);
+}
+
+.team-bg-4 {
+  background-image: url(../img/team/team-4.jpg);
+}
+
+.team-bg {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  background-color: #333333; /* Set team background to dark grey */
+}
+
+.single-team-item {
+  position: relative;
+}
+
+.single-team-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #ffffff; /* Set team member name to white */
+}
+
+.single-team-item h4 span {
+  font-size: 70%;
+  display: block;
+  margin-top: 10px;
+  opacity: 0.7;
+  color: #ffffff; /* Set team member role to white */
+}
+
+ul.social-link-team {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+ul.social-link-team li {
+  display: inline-block;
+}
+
+ul.social-link-team li a {
+  color: #ffffff; /* Set team social icon links to white */
+  background-color: #FF0000; /* Set team social icon background to red */
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  display: block;
+  margin: 5px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Contact Page Styles
+
+----------------------------------------------------------------------------- */
+.form-title {
+  margin-bottom: 25px;
+}
+
+.form-title h2 {
+  font-size: 25px;
+  color: #ffffff; /* Set contact form title to white */
+}
+
+.form-title p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #ffffff; /* Set contact form text to white */
+}
+
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+  width: 49%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #ffffff; /* Set contact form input text to white */
+}
+
+.contact-form form p textarea {
+  border: 1px solid #ddd;
+  padding: 15px;
+  height: 200px;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+  color: #ffffff; /* Set contact form textarea text to white */
+}
+
+.contact-form-wrap {
+  background-color: #333333; /* Set contact form wrap background to dark grey */
+  padding: 45px 30px;
+  border-radius: 5px;
+}
+
+.contact-form-box {
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+
+.contact-form-box h4 {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 10px;
+  color: #ffffff; /* Set contact form box heading to white */
+}
+
+.contact-form-box h4 i {
+  position: absolute;
+  left: -13%;
+  color: #FF0000; /* Set contact form box icon to red */
+  top: 2px;
+}
+
+.contact-form-box p {
+  line-height: 1.8;
+  opacity: 0.8;
+  color: #ffffff; /* Set contact form box text to white */
+}
+
+.contact-form-wrap .contact-form-box:last-child {
+  margin: 0;
+}
+
+.find-location p {
+  color: #ffffff; /* Set find location text to white */
+  font-size: 40px;
+  margin: 0;
+  font-weight: 600;
+  padding: 95px 0;
+}
+
+.find-location p i {
+  margin-right: 10px;
+  color: #FF0000; /* Set find location icon to red */
+}
+
+#form_status span {
+  color: #ffffff; /* Set form status text to white */
+  font-size: 14px;
+  font-weight: normal;
+  background: #E74C3C;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 0px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+#form_status span.loading {
+  color: #333333; /* Set loading status text to dark grey */
+  background: #eee;
+  border-radius: 3px;
+  padding: 18px 0px;
+}
+
+#form_status span.notice {
+  color: #FF0000; /* Set form notice text to red */
+}
+
+#form_status .success {
+  color: #ffffff; /* Set form success text to white */
+  text-align: center;
+  background: #2ecc71;
+  border-radius: 3px;
+  padding: 30px 0px;
+}
+
+#form_status .success i {
+  color: #ffffff; /* Set form success icon to white */
+  font-size: 45px;
+  margin-bottom: 14px;
+}
+
+#form_status .success h3 {
+  color: #ffffff; /* Set form success heading to white */
+  margin-bottom: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Shop Page Styles
+
+----------------------------------------------------------------------------- */
+.product-filters {
+  margin-bottom: 80px;
+}
+
+.product-filters ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.product-filters ul li {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 15px;
+  border: 2px solid #ffffff; /* Set product filter border to white */
+  color: #ffffff; /* Set product filter text to white */
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 25px;
+}
+
+.product-filters ul li.active {
+  border: 2px solid #FF0000; /* Set active product filter border to red */
+  background-color: #FF0000; /* Set active product filter background to red */
+  color: #ffffff; /* Set active product filter text to white */
+}
+
+.single-product-item {
+  margin-bottom: 30px;
+  background-color: #333333; /* Set product item background to dark grey */
+}
+
+
+.product-section .single-product-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-section .product-image img {
+  width: 100%;
+  height: auto;
+  max-width: 350px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
+.product-section .cart-btn {
+  margin-top: 15px;
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.product-section .cart-btn:hover {
+  background-color: #000000;
+}
+
+
+.product-image {
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+.product-image img {
+  width: 90%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.single-product-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff; /* Set product title to white */
+}
+
+p.product-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff; /* Set product price text to white */
+}
+
+p.product-price span {
+  display: block;
+  opacity: 0.8;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff; /* Set product price unit text to white */
+}
+
+a.cart-btn {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  background-color: #FF0000; /* Set add to cart button background to red */
+  color: #ffffff; /* Set add to cart button text to white */
+  padding: 10px 20px;
+  border: 2px solid #333333; /* Set add to cart button border to dark grey */
+  border-radius: 50px;
+}
+
+a.cart-btn i {
+  margin-right: 5px;
+}
+
+div.owl-controls, .owl-controls div {
+  height: auto;
+  top: 50%;
+  color: #ffffff; /* Set product slider controls to white */
+  font-size: 48px;
+}
+
+.owl-prev {
+  position: absolute;
+  left: 0;
+  margin-top: -30px;
+}
+
+.owl-next {
+  position: absolute;
+  right: 0;
+  margin-top: -30px;
+}
+
+.product-filters {
+  margin-bottom: 80px;
+}
+
+.single-product-item p {
+  margin-bottom: 15px;
+}
+
+.product-slider-wrap {
+  margin-bottom: 150px;
+}
+
+.product-slider-wrap h2.section-title {
+  margin-bottom: 50px;
+  color: #ffffff; /* Set product slider title to white */
+}
+
+.product-slider-wrap p.section-title {
+  margin-bottom: 0;
+  color: #ffffff; /* Set product slider text to white */
+}
+
+.product-slider-wrap {
+  margin-bottom: 100px;
+}
+
+#category-filter {
+  margin-bottom: 80px;
+}
+
+#category-filter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#category-filter ul li {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 15px;
+  border: 2px solid #ffffff; /* Set category filter border to white */
+  color: #ffffff; /* Set category filter text to white */
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 25px;
+}
+
+#category-filter ul li.active {
+  border: 2px solid #FF0000; /* Set active category filter border to red */
+  background-color: #FF0000; /* Set active category filter background to red */
+  color: #ffffff; /* Set active category filter text to white */
+}
+
+/* -----------------------------------------------------------------------------
+
+# Product Styles
+
+----------------------------------------------------------------------------- */
+.single-product-page {
+  margin-bottom: 80px;
+}
+
+.product-image {
+  background-color: #333333; /* Set product image background to dark grey */
+  padding: 70px;
+  border-radius: 5px;
+}
+
+.product-image img {
+  max-width: 100%;
+}
+
+.single-product-page {
+  margin-bottom: 100px;
+}
+
+.product-slider {
+  margin-bottom: 80px;
+}
+
+.product-slider h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff; /* Set product slider heading to white */
+  margin-bottom: 20px;
+}
+
+.product-slider ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-slider ul li {
+  display: inline-block;
+}
+
+.product-slider ul li img {
+  max-width: 100%;
+  max-height: 80px;
+}
+
+.product-slider h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffffff; /* Set product title to white */
+  margin-bottom: 20px;
+}
+
+.product-slider h2 span {
+  font-size: 20px;
+  display: block;
+  margin-top: 10px;
+  opacity: 0.7;
+  color: #ffffff; /* Set product subtitle to white */
+}
+
+.product-slider p {
+  color: #ffffff; /* Set product description text to white */
+  line-height: 1.8;
+}
+
+.product-slider p span {
+  font-size: 36px;
+  font-weight: 600;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  color: #FF0000; /* Set product price to red */
+}
+
+.single-product-page .cart-btns {
+  margin-top: 40px;
+}
+
+.single-product-page .cart-btns a {
+  margin-right: 20px;
+}
+
+.product-slider ul li {
+  display: inline-block;
+}
+
+#single-product-carousel {
+  margin-top: 30px;
+}
+
+#single-product-carousel div.owl-stage {
+  text-align: center;
+}
+
+#single-product-carousel div.owl-item img {
+  margin: 0 auto;
+}
+
+.single-product-page ul.nav {
+  margin-top: 40px;
+  border-bottom: none;
+}
+
+.single-product-page ul.nav li a {
+  color: #ffffff; /* Set product nav links to white */
+  font-size: 17px;
+  padding: 10px 15px;
+  border-bottom: 3px solid transparent;
+  font-weight: 700;
+}
+
+.single-product-page ul.nav li a.active {
+  color: #FF0000; /* Set active product nav link to red */
+  border-bottom: 3px solid #FF0000; /* Set active product nav underline to red */
+}
+
+.single-product-page ul.nav li a:hover {
+  color: #FF0000; /* Set product nav link hover to red */
+}
+
+.single-product-page ul.nav li a:hover {
+  color: #FF0000; /* Set product nav link hover to red */
+}
+
+.single-product-page ul.nav li {
+  margin-right: 10px;
+}
+
+.product-reviews {
+  margin-top: 30px;
+}
+
+.product-reviews .single-review-item {
+  margin-bottom: 30px;
+}
+
+.product-reviews .single-review-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff; /* Set review author to white */
+}
+
+.product-reviews .single-review-item span {
+  font-size: 70%;
+  color: #ffffff; /* Set review date to white */
+  font-weight: 700;
+  display: block;
+  opacity: 0.5;
+}
+
+.product-reviews .single-review-item p {
+  line-height: 1.8;
+  color: #ffffff; /* Set review text to white */
+}
+
+.product-reviews .single-review-item img {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.product-reviews .single-review-item .review-stars {
+  margin-bottom: 20px;
+}
+
+.product-reviews .single-review-item .review-stars i {
+  color: #FF0000; /* Set review stars to red */
+}
+
+.review-form {
+  margin-top: 60px;
+}
+
+.review-form .review-form-box {
+  padding: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #333333; /* Set review form background to dark grey */
+}
+
+.review-form .review-form-box h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff; /* Set review form heading to white */
+  margin-bottom: 15px;
+}
+
+.review-form .review-form-box p {
+  font-size: 15px;
+  color: #ffffff; /* Set review form text to white */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.review-form .review-form-box form p {
+  margin-bottom: 25px;
+}
+
+.review-form .review-form-box form p:last-child {
+  margin-bottom: 0px;
+}
+
+.review-form .review-form-box form p input[type=text], .review-form .review-form-box form p input[type=email] {
+  border: 1px solid #ddd;
+  width: 49%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff; /* Set review form input text to white */
+}
+
+.review-form .review-form-box form p textarea {
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 15px;
+  color: #ffffff; /* Set review form textarea text to white */
+  border-radius: 5px;
+  height: 250px;
+  resize: none;
+  width: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Checkout Page Styles
+
+----------------------------------------------------------------------------- */
+
+/* General Styles */
+.checkout-section {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  background-color: #000000; /* Black background */
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+/* Layout */
+.checkout-section .row {
+  gap: 30px; /* Increase space between columns */
+}
+
+/* On mobile, stack the columns */
+@media (max-width: 991px) {
+  .checkout-section .row {
+    grid-template-columns: 1fr; /* Full width on mobile */
+  }
+}
+
+/* Form Input Styling */
+.billing-address-form input,
+.shipping-address-form input,
+.shipping-address-form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.billing-address-form input::placeholder,
+.shipping-address-form input::placeholder {
+  color: #999;
+}
+
+/* Billing Address Form */
+.billing-address-form input[type="text"],
+.billing-address-form input[type="email"],
+.billing-address-form input[type="tel"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.billing-address-form input[type="text"]::placeholder,
+.billing-address-form input[type="email"]::placeholder,
+.billing-address-form input[type="tel"]::placeholder {
+  color: #777777;
+}
+
+/* Card Header Styles */
+.card-header h5 button {
+  font-size: 18px;
+  color: white;
+  background-color: #444;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+.card-header h5 button:hover {
+  background-color: #555;
+}
+
+/* Accordion Body Styling */
+.card-body {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Order Details Wrapper */
+.order-details-wrap {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* On Desktop */
+@media (min-width: 992px) {
+  .order-details-wrap {
+    position: sticky;
+    top: 20px;
+    height: auto; /* Allow it to grow with content */
+  }
+  
+  .col-lg-8 {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 100%; /* Ensure full width in its grid column */
+  }
+
+  .col-lg-4 {
+    width: 100%;
+    max-width: 100%; /* Ensure full width in its grid column */
+  }
+}
+
+/* On Mobile */
+@media (max-width: 991px) {
+  .col-lg-8,
+  .col-lg-4 {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+  }
+  
+  .order-details-wrap {
+    margin-top: 30px;
+    position: static;
+  }
+}
+
+/* Order Details Table */
+.order-details {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.order-details th,
+.order-details td {
+  padding: 10px 0;
+  color: #333333;
+  font-size: 14px;
+}
+
+/* Make the total price stand out */
+.order-details .checkout-details td#total {
+  font-size: 18px;
+  color: #d9534f;
+}
+
+/* Place Order Button */
+#place-order-button {
+  display: block;
+  width: 100%;
+  background-color: #ff0000;
+  color: white;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#place-order-button:hover {
+  background-color: #c9302c;
+}
+
+/* Logo Carousel Section */
+.logo-carousel-section {
+  background-color: #333333;
+  padding: 50px 0;
+  width: 100%;
+  margin-top: 40px;
+}
+
+
+
+
+
+/* -----------------------------------------------------------------------------
+
+# Pricing Page Styles
+
+----------------------------------------------------------------------------- */
+.pricing-table {
+  background-color: #333333; /* Set pricing table background to dark grey */
+  padding: 50px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 50px #ddd;
+  box-shadow: 0 0 50px #ddd;
+}
+
+.pricing-table h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff; /* Set pricing table title to white */
+  margin-bottom: 0;
+}
+
+.pricing-table h2 {
+  font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #FF0000; /* Set pricing amount to red */
+}
+
+.pricing-table h2 span {
+  font-size: 30px;
+  display: block;
+  opacity: 0.8;
+  color: #ffffff; /* Set pricing unit to white */
+  font-weight: 300;
+}
+
+.pricing-table ul {
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.pricing-table ul li {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff; /* Set pricing list item text to white */
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.pricing-table ul li:last-child {
+  margin-bottom: 0;
+}
+
+.service-box {
+  padding: 50px;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 20px #dddddd;
+  box-shadow: 0 0 20px #dddddd;
+}
+
+.service-box p {
+  font-size: 15px;
+  color: #ffffff; /* Set service box text to white */
+  line-height: 1.6;
+}
+
+.service-box img {
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Error Page Styles
+
+----------------------------------------------------------------------------- */
+.error-page-section {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.error-page-section img {
+  margin-bottom: 40px;
+}
+
+.error-page-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff; /* Set error page heading to white */
+  margin-bottom: 40px;
+}
+
+.error-page-section p {
+  font-size: 18px;
+  color: #ffffff; /* Set error page text to white */
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------------------------------
+
+# Loading Page Styles
+
+----------------------------------------------------------------------------- */
+.load-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11111;
+  background-color: #ffffff; /* Set loading screen background to white */
+  overflow: hidden;
+}
+
+.load-wrap .preloader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  border-radius: 50%;
+  border-top: 2px solid #FF0000; /* Set loader border to red */
+  border-left: 2px solid #FF0000; /* Set loader border to red */
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  -webkit-animation: anim 2s infinite linear;
+  animation: anim 2s infinite linear;
+}
+
+.load-wrap {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.load-wrap.load-wrap-deactivate {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+
+@-webkit-keyframes anim {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anim {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.image-slider {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-controls span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.slider-controls span.prev {
+  left: 10px;
+}
+
+.slider-controls span.next {
+  right: 10px;
+}
+
+.slider-controls span:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.company-icon img {
+    width: 50%;  /* Adjust the width as needed */
+    height: auto;  /* Maintain aspect ratio */
+    max-width: 100%;  /* Ensure the image doesn't exceed its container's width */
+}
+
+
+/* Styles for the "Find Us Online" section */
+.find-us-online {
+	padding: 20px 0;
+	background-color: #333333; /* Dark grey background */
+	color: #ffffff; /* White text */
+}
+
+.section-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0;
+	color: #ff0000; /* Red text */
+}
+
+.section-description {
+	font-size: 18px;
+	margin: 20px 0;
+	color: #ffffff; /* White text */
+}
+
+.social-icons ul {
+	list-style: none;
+	padding: 0;
+}
+
+.social-icons ul li {
+	display: inline;
+	margin: 0 10px;
+}
+
+.social-icons ul li a {
+	color: #ff0000; /* Red icons */
+	font-size: 24px;
+}
+
+.social-icons ul li a:hover {
+	color: #000000; /* Black on hover */
+}
+
+/* FAQ section */
+.faq-section {
+  background-color: #000000; /* Light grey background */
+  color: #333; /* Dark grey text */
+}
+
+.faq-accordion .single-faq {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.faq-accordion .single-faq h3 {
+  color: #ff0000; /* Red color for questions */
+}
+
+.faq-accordion .single-faq p {
+  color: #ffffff; /* White for answers */
+}
+
+.boxed-btn {
+  background-color: #ff0000; /* Red background */
+  color: #ffffff; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.boxed-btn:hover {
+  background-color: #e60000; /* Darker red on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
